@@ -111,7 +111,7 @@ class _OrientationScreenState extends State<OrientationScreen> {
           },
         ),
 
-      ]),
+      ], ),
       body: Stack(
         children: [
           Column(

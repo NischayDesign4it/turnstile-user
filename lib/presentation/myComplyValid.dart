@@ -110,12 +110,14 @@ class _ComplyValidScreenState extends State<ComplyValidScreen> {
       final dir = await getApplicationDocumentsDirectory();
       final document =
       pdf.PdfDocument(inputBytes: File(_localFilePath).readAsBytesSync());
-      final page = document.pages.add();
+
+      final int lastIndex = document.pages.count - 1; // Get the index of the last page
+      final PdfPage lastPage = document.pages[lastIndex]; // Get the last page
 
       final PdfBitmap signatureImage = pdf.PdfBitmap(signatureBytes);
-      page.graphics.drawImage(
+      lastPage.graphics.drawImage(
         signatureImage,
-        Rect.fromLTWH(0, 0, 100, 50),
+        Rect.fromLTWH(150, 500, 100, 70), // Adjust position and size as needed
       );
 
       final signedPdfPath = '${dir.path}/signed_document.pdf';
@@ -128,6 +130,7 @@ class _ComplyValidScreenState extends State<ComplyValidScreen> {
       );
     }
   }
+
 
   Future<void> _uploadSignedPdf(String filePath) async {
     final request = http.MultipartRequest(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:turnstile_user/presentation/dashboardScreen.dart';
 import '../customWidget/customAppbar.dart';
 import '../customWidget/customButton.dart';
-import '../globals.dart';
+import 'package:turnstile_user/globals.dart' as globals;
 import 'package:http/http.dart' as http;
 
 class ProfileScreen extends StatefulWidget {
@@ -106,6 +106,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: CustomAppBar(
         title: 'FILL YOUR DETAILS',
+        // title: 'FILL YOUR DETAILS',
         actions: [
           IconButton(
             color: Colors.white,

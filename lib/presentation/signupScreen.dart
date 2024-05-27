@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:turnstile_user/customWidget/customButton.dart';
+import 'package:turnstile_user/presentation/loginScreen.dart';
 import '../customWidget/customAppbar.dart';
 import '../globals.dart';
 import 'dashboardScreen.dart';
@@ -45,7 +46,7 @@ class SignupScreen extends StatefulWidget {
           // Navigate to the home screen
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => DashboardScreen()),
+            MaterialPageRoute(builder: (context) => LoginScreen()),
           );
         } else {
           // Handle login failure

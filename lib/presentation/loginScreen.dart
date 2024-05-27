@@ -1,16 +1,15 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:http/http.dart'as http;
+import 'package:http/http.dart' as http;
 import 'package:turnstile_user/presentation/signupScreen.dart';
 
 import '../customWidget/customButton.dart';
 import 'dashboardScreen.dart';
 import 'package:turnstile_user/globals.dart' as globals;
 
-
 class LoginScreen extends StatefulWidget {
-   LoginScreen({super.key});
+  LoginScreen({super.key});
 
   TextEditingController emailController = TextEditingController();
 
@@ -39,7 +38,10 @@ class LoginScreen extends StatefulWidget {
         // Check if the response indicates successful login
         if (responseData['message'] == 'Login successful') {
           globals.loggedInUserEmail = email;
+          globals.loggedInUserName = responseData['name'];
           print(globals.loggedInUserEmail);
+          print(globals.loggedInUserName);
+
           // Navigate to the home screen
           Navigator.push(
             context,
@@ -88,7 +90,7 @@ class LoginScreen extends StatefulWidget {
     }
   }
 
-   @override
+  @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
@@ -100,6 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     passwordVisible = true;
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,7 +133,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     labelStyle: TextStyle(fontSize: 20, color: Colors.black),
                     prefixIcon: Icon(Icons.email),
                     contentPadding: EdgeInsets.only(top: 12, bottom: 12),
-
                   ),
                 ),
 
@@ -187,14 +189,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 //     );
                 //   }, child: Text("LOGIN"),
                 // ),
-                CustomButton(text: 'Login', onPressed: (){
-                  widget.loginUser(
-                    context,
-                    widget.emailController.text,
-                    widget.passwordController.text,
-                  );
-
-                }),
+                CustomButton(
+                    text: 'Login',
+                    onPressed: () {
+                      widget.loginUser(
+                        context,
+                        widget.emailController.text,
+                        widget.passwordController.text,
+                      );
+                    }),
 
                 SizedBox(height: 20),
                 new GestureDetector(
@@ -203,7 +206,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       context,
                       MaterialPageRoute(builder: (context) => SignupScreen()),
                     );
-
                   },
                   child: Text("Don't have an account? SignUp",
                       style: TextStyle(fontWeight: FontWeight.bold)),
@@ -216,4 +218,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
