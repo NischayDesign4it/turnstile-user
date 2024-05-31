@@ -94,7 +94,7 @@ class _OrientationScreenState extends State<OrientationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'MYCOMPLY ID', actions: [
+      appBar: CustomAppBar(title: 'SST', actions: [
         IconButton(
           color: Colors.white,
           icon: Icon(Icons.upload),

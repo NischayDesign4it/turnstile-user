@@ -209,7 +209,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        ("MYCOMPLY"),
+                                        ("SST"),
                                         style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 18,
