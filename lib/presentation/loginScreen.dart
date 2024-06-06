@@ -17,7 +17,7 @@ class LoginScreen extends StatefulWidget {
 
   Future<void> loginUser(
       BuildContext context, String email, String password) async {
-    final String apiUrl = 'http://54.163.33.217:8000/loginapi/';
+    final String apiUrl = 'http://44.214.230.69:8000/loginapi/';
 
     try {
       final response = await http.post(

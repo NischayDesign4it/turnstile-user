@@ -37,7 +37,7 @@ class _FaceEnrollScreenState extends State<FaceEnrollScreen> {
 
     var request = http.MultipartRequest(
       'POST',
-      Uri.parse('http://54.163.33.217:8000/face_api/'),
+      Uri.parse('http://44.214.230.69:8000/face_api/'),
     );
     request.fields['email'] = loggedInUserEmail;
     for (var image in _images) {

@@ -39,7 +39,7 @@ class _ComplyValidScreenState extends State<ComplyValidScreen> {
   Future<void> _fetchAndSavePdf() async {
     try {
       final response = await http
-          .get(Uri.parse('http://54.163.33.217:8000/get_orientation_api/'));
+          .get(Uri.parse('http://44.214.230.69:8000/get_orientation_api/'));
 
       if (response.statusCode == 200) {
         final jsonResponse = jsonDecode(response.body) as List;
@@ -135,7 +135,7 @@ class _ComplyValidScreenState extends State<ComplyValidScreen> {
   Future<void> _uploadSignedPdf(String filePath) async {
     final request = http.MultipartRequest(
       'POST',
-      Uri.parse('http://54.163.33.217:8000/post_orientation/'),
+      Uri.parse('http://44.214.230.69:8000/post_orientation/'),
     );
     request.fields['email'] = loggedInUserEmail;
     request.files.add(await http.MultipartFile.fromPath('orientation', filePath));

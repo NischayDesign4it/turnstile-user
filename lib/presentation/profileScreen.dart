@@ -23,7 +23,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   Future<void> workerRegister(
       BuildContext context, String name, String companyName, String jobRole, String myCompanyId, String jobLocation) async {
-    final String apiUrl = 'http://54.163.33.217:8000/user_profile_api/';
+    final String apiUrl = 'http://44.214.230.69:8000/user_profile_api/';
 
     try {
       final response = await http.post(
