@@ -20,7 +20,7 @@ class SignupScreen extends StatefulWidget {
 
   Future<void> loginUser(
       BuildContext context, String name, String email, String password) async {
-    final String apiUrl = 'http://44.214.230.69:8000/signupapi/';
+    final String apiUrl = 'http://54.210.204.46:8000/signupapi/';
 
     try {
       final response = await http.post(

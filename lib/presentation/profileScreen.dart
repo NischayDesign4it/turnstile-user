@@ -6,6 +6,8 @@ import '../customWidget/customButton.dart';
 import 'package:turnstile_user/globals.dart' as globals;
 import 'package:http/http.dart' as http;
 
+import '../globals.dart';
+
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key? key}) : super(key: key);
 
@@ -37,8 +39,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
           'job_role': jobRole,
           'mycompany_id': myCompanyId,
           'job_location': jobLocation,
+          'email': loggedInUserEmail
         },
       );
+      print(loggedInUserEmail);
+
 
       if (response.statusCode == 201) {
         final responseData = json.decode(response.body);
@@ -237,6 +242,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 widget.selectedJobRole,
                 widget.myCompanyIdController.text,
                 widget.jobLocationController.text,
+
               );
 
             }),

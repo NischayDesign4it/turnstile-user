@@ -15,7 +15,7 @@ class TagIDScreen extends StatefulWidget {
 
 
   Future<void> postData(String tagId, String email, BuildContext context) async {
-    final url = Uri.parse('http://44.214.230.69:8000/post_tagid/');
+    final url = Uri.parse('http://54.210.204.46:8000/post_tagid/');
     final response = await http.post(
       url,
       headers: <String, String>{
